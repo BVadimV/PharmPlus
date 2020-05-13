@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "381125011942",
+    "firebase_url": "https://pharmplus-51635.firebaseio.com",
+    "project_id": "pharmplus-51635",
+    "storage_bucket": "pharmplus-51635.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381125011942:android:c4f2a1cda0e2818d4ace27",
+        "android_client_info": {
+          "package_name": "ru.bvv.pharmplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381125011942-625090g7jtg8je9darl8v9n7uq6l2od6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.bvv.pharmplus",
+            "certificate_hash": "246f246e0e776fa85ba678f491e3ccd34f28b277"
+          }
+        },
+        {
+          "client_id": "381125011942-0co2p0upoqbjv1ehrf00due3bv557bih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaKPBZCQqdnTsMud1t0-oT3kR6lHPXwTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381125011942-0co2p0upoqbjv1ehrf00due3bv557bih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

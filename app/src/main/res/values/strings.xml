@@ -1,0 +1,261 @@
+<resources>
+    <string name="app_name">PharmPlus</string>
+    <string name="tv_registration">Форма регистрации</string>
+    <string name="hint_firstname">Имя</string>
+    <string name="hint_lastname">Фамилия</string>
+    <string name="hint_age">Возраст</string>
+    <string name="tv_city">Город: </string>
+    <string name="hint_email">Почта</string>
+    <string name="hint_password">Пароль</string>
+    <string name="hint_phone">Мобильный</string>
+    <string name="btnReg">Зарегистрироваться</string>
+    <string name="text_prof">Профиль</string>
+    <string name="text_kat">Каталог</string>
+    <string name="text_map">Карта аптек</string>
+    <string name="hint_login">Логин или почта</string>
+    <string name="text_btn_enter">Войти</string>
+    <string name="text_registration">Регистрация</string>
+    <string name="text_contacts">Контакты</string>
+    <string name="text_medicines">Лекарства</string>
+    <string name="text_bad">БАД и Витамины</string>
+    <string name="link"><![CDATA[>]]></string>
+    <string name="line">_____________________</string>
+    <string name="text_hygiene">Гигиена</string>
+    <string name="text_lenses">Линзы</string>
+    <string name="text_medical_supplies">Медицинские товары</string>
+    <string name="text_beauty">Красота</string>
+    <string name="text_medical_tech">Медицинская техника</string>
+    <string name="text_aku_gen">Акушерство, гинекология</string>
+    <string name="text_allergy">Аллергия</string>
+    <string name="text_anasteziya">Анастезия, реанимация</string>
+    <string name="text_antibiotics">Антибиотики</string>
+    <string name="text_bolezni_krovi">Болезни крови</string>
+    <string name="text_bol_temperatura">Боль, температура</string>
+    <string name="text_gemorroi">Геморрой</string>
+    <string name="text_eyes">Глаза</string>
+    <string name="text_paraziti">Глисты, вши, чесотка</string>
+    <string name="text_gomeopatiya">Гомеопатия</string>
+    <string name="text_diabet">Диабет</string>
+    <string name="text_diagnostic">Диагностические средства</string>
+    <string name="text_respiratory_system">Дыхательная система</string>
+    <string name="text_gastro">Желудок, кишечник, печень</string>
+    <string name="text_teeth">Зубы и рот</string>
+    <string name="text_immune">Иммунная система</string>
+    <string name="text_skin">Кожа</string>
+    <string name="text_urogenital">Мочеполовая система</string>
+    <string name="text_metabolism">Нарушение обмена веществ</string>
+    <string name="text_neurology">Нейрология, психиатрия</string>
+    <string name="text_disinfectants">Обеззараживающие средства</string>
+    <string name="text_oncology">Онкология</string>
+    <string name="text_poisoning">Отравления</string>
+    <string name="text_antiviral">Противовирусные средства</string>
+    <string name="text_antifungal">Противогрибковые средства</string>
+    <string name="text_cardiovascular">Сердечно-сосудистые</string>
+    <string name="text_ear_throat_nose">Ухо, горло, нос</string>
+    <string name="text_endocrinology">Эндокринология</string>
+    <string name="text_vitamins_minerals">Витаминно-минеральные комплексы</string>
+    <string name="text_vitamins_for_pregnat">Витамины для беременных и кормящих</string>
+    <string name="text_vitamins_for_body">Витамины для волос, кожи, ногтей</string>
+    <string name="text_vitamins_for_eyes">Витамины для зрения</string>
+    <string name="text_polyvitamins">Поливитамины</string>
+    <string name="text_vitamin_a">Витамин А</string>
+    <string name="text_vitamin_b">Витамин B</string>
+    <string name="text_vitamin_b1">Витамин B1</string>
+    <string name="text_vitamin_b2">Витамин B2</string>
+    <string name="text_vitamin_b6">Витамин B6</string>
+    <string name="text_vitamin_b12">Витамин B12</string>
+    <string name="text_vitamin_c">Витамин С</string>
+    <string name="text_vitamin_d3">Витамин D3</string>
+    <string name="text_vitamin_k">Витамин K</string>
+    <string name="text_vitamin_e">Витамин E</string>
+    <string name="text_iron">Железо</string>
+    <string name="text_potassium_magnesium">Калий и магний</string>
+    <string name="text_calcium">Кальций</string>
+    <string name="text_calcium_d3">Кальций D3</string>
+    <string name="text_magnesium">Магний</string>
+    <string name="text_selenium">Селен</string>
+    <string name="text_folic_acid">Фолиевая кислота</string>
+    <string name="text_zinc">Цинк</string>
+    <string name="text_amino_acids">Аминокислоты</string>
+    <string name="text_antioxidants">Антиоксиданты</string>
+    <string name="text_bad_nootropics">БАД ноотропные средства</string>
+    <string name="text_bad_from_parasites">БАД от паразитов</string>
+    <string name="text_herbsandfees">БАД травы и сборы</string>
+    <string name="text_supplements_for_athletes">Добавки для спортсменов</string>
+    <string name="text_antibacterial_hygiene_products">Антибактериальные средства гигиены</string>
+    <string name="text_atmosphere_in_home">Атмосфера в доме</string>
+    <string name="text_house_hygiene">Гигиена дома</string>
+    <string name="text_sregstva_schenskoi_gigieni">Средства женской гигиены</string>
+    <string name="text_uhod_za_rtom">Уход за полостью рта</string>
+    <string name="text_temporary_lenses">Временные линзы</string>
+    <string name="text_two_weeks_lenses">Двухнедельные линзы</string>
+    <string name="text_quarterly_lenses">Квартальные линзы</string>
+    <string name="text_lenses_on_month">Линзы на месяц</string>
+    <string name="text_multyfocal_lenses">Мультифокальные линзы</string>
+    <string name="text_one_day_lenses">Однодневные линзы</string>
+    <string name="text_glasses">Очки</string>
+    <string name="text_diagnostic_tests">Диагностические тесты</string>
+    <string name="text_healthy_eating">Здоровое питание</string>
+    <string name="text_medical_products">Медицинские изделия и расходные материалы</string>
+    <string name="text_orthopedics">Ортопедия</string>
+    <string name="text_patch">Пластырь</string>
+    <string name="text_infertility">Бесплодие</string>
+    <string name="text_infections">Инфекции</string>
+    <string name="text_thrush">Молочница</string>
+    <string name="text_contraceptive">Противозачаточные средства</string>
+    <string name="text_trichomoniasis">Трихомоноз</string>
+    <string name="text_orgalutran_naimenovanie">Оргалутран раствор д/подкож введен. 0.25 мг/0,5 мл 0.5 мл шприцы, 5 шт.</string>
+    <string name="text_vnalichii">В наличии</string>
+    <string name="price_orgalutran">6506 ₽</string>
+    <string name="text_btn_buy">Купить</string>
+    <string name="text_poluchitzakaz">Получить заказ</string>
+    <string name="text_dostavkasegodnya">Доставка сегодня</string>
+    <string name="text_freedelivery">Бесплатно от 2500 ₽</string>
+    <string name="text_samovivoz">Самовывоз</string>
+    <string name="text_free">Бесплатно</string>
+    <string name="text_character">Характеристики</string>
+    <string name="text_harakteristiki_temp">Хранить при температуре 2-30°С в защищенном от света и недоступном для детей месте. Не замораживать</string>
+    <string name="text_instruction">Инструкции</string>
+    <string name="text_sostav">Состав:</string>
+    <string name="shopping_cart">Корзина</string>
+    <string name="tv_pharma">Фармакологическое действие:</string>
+    <string name="text_indication">Показания:</string>
+    <string name="text_contraindication">Противопоказания:</string>
+    <string name="text_side_effect">Побочные действия:</string>
+    <string name="text_mode_of_app">Способ применения и дозы:</string>
+    <string name="text_release_form">Форма выпуска:</string>
+    <string name="text_shelf_life">Срок годностти:</string>
+    <string name="text_sign_out">Выйти</string>
+
+    <string-array name="city">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Новосибирск</item>
+        <item>Омск</item>
+        <item>Томск</item>
+        <item>Краснодар</item>
+    </string-array>
+    <string-array name="opisanie_orgalutran">
+        <item>Состав</item>
+        <item>фармакологическое действие</item>
+        <item>Показания</item>
+        <item>Противопоказания</item>
+        <item>Побочные действия</item>
+        <item>Способ применения и дозы</item>
+        <item>Форма выпуска</item>
+        <item>Срок годности</item>
+    </string-array>
+    <string-array name="list_catalog_medicines">
+        <item>Акушерство, гинекология</item>
+        <item>Аллергия</item>
+        <item>Анестезия, реанимация</item>
+        <item>Антибиотики</item>
+        <item>Болезни крови</item>
+        <item>Боль температура</item>
+        <item>Геморрой</item>
+        <item>Глаза</item>
+        <item>Глисты, вши, чесотка</item>
+        <item>Гомеопатия</item>
+        <item>Диабет</item>
+        <item>Диагностические средства</item>
+        <item>Дыхательная система</item>
+        <item>Желудок, кишечник, печень</item>
+        <item>Зубы и рот</item>
+        <item>Иммунная система</item>
+        <item>Кожа</item>
+        <item>Мочеполовая система</item>
+        <item>Нарушения обмена веществ</item>
+        <item>Неврология, психиатрия</item>
+        <item>Обеззараживающие средства</item>
+        <item>Онкология</item>
+        <item>Отравления</item>
+        <item>Питательные смеси</item>
+        <item>Противовирусные средства</item>
+        <item>Противогрибковые средства</item>
+        <item>Разное</item>
+        <item>Сердечно-сосудистые</item>
+        <item>Трихомоноз и малярия</item>
+        <item>Ухо, горло, нос</item>
+        <item>Эндокринология</item>
+    </string-array>
+    <string-array name="list_catalog">
+        <item>Лекарства</item>
+        <item>Витамины и БАД</item>
+        <item>Гигиена</item>
+        <item>Интим</item>
+        <item>Красота</item>
+        <item>Линзы</item>
+        <item>Медтехника</item>
+        <item>Медтовары</item>
+    </string-array>
+    <string-array name="list_hygiene">
+        <item>Антибактериальные средства гигиены</item>
+        <item>Атмосфера в доме</item>
+        <item>Ватные и бумажные изделия</item>
+        <item>Гигиена дома</item>
+        <item>Дезодоранты</item>
+        <item>Средства женской гигиены</item>
+        <item>Средства защиты от насекомых</item>
+        <item>Урологические препараты</item>
+        <item>Уход за одеждой и обувью</item>
+        <item>Уход за полостью рта</item>
+    </string-array>
+    <string-array name="list_vitamins">
+        <item>Витаминно-минеральные комплексы</item>
+        <item>Витамины для беременных и кормящих</item>
+        <item>Витамины для волос, кожи, ногтей</item>
+        <item>Витамины для зрения</item>
+        <item>Поливитамины</item>
+        <item>Витамин А</item>
+        <item>Витамин В</item>
+        <item>Витамин В1</item>
+        <item>Витамин В2</item>
+        <item>Витамин В6</item>
+        <item>Витамин В12</item>
+        <item>Витамин С</item>
+        <item>Витамин D3</item>
+        <item>Витамин Е</item>
+        <item>Витамин К</item>
+        <item>Железо</item>
+        <item>Калий и магний</item>
+        <item>Кальций</item>
+        <item>Кальций Д3</item>
+        <item>Магний</item>
+        <item>Селен</item>
+        <item>Фолиевая кислота</item>
+        <item>Цинк</item>
+        <item>Аминокислоты</item>
+        <item>Антиоксиданты</item>
+    </string-array>
+    <string-array name="list_lenses">
+        <item>Двухнедельные линзы</item>
+        <item>Квартальные линзы</item>
+        <item>Линзы на месяц</item>
+        <item>Мультифокальные линзы</item>
+        <item>Однодневные линзы</item>
+        <item>Очки</item>
+        <item>Средства по уходу за линзами</item>
+        <item>Торические линзы</item>
+        <item>Увлажняющие капли</item>
+        <item>Цветные линзы</item>
+    </string-array>
+    <string-array name="list_medgoods">
+        <item>Диагностические тесты</item>
+        <item>Здоровое питание</item>
+        <item>Компрессионное и корректирующее белье</item>
+        <item>Медицинские изделия и расходные материалы</item>
+        <item>Ортопедия</item>
+        <item>Пластыри</item>
+        <item>Презервативы и смазка</item>
+        <item>Сертификаты на услуги</item>
+        <item>Солевые лампы, грелки</item>
+        <item>Средства ухода за лежачими больными</item>
+    </string-array>
+    <string-array name="list_gynecology">
+        <item>Бесплодие</item>
+        <item>Инфекции</item>
+        <item>Молочница</item>
+        <item>Противозачаточные средства</item>
+        <item>Трихомоноз</item>
+    </string-array>
+</resources>
