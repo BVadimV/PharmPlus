@@ -60,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
 //    profile.setOnClickListener(new View.OnClickListener)
 
     public void onClickProfile(View view) {
-//        Intent intent = new Intent(getApplicationContext(), AuthorizationActivity.class);
-//        startActivity(intent);
         FirebaseUser user = auth.getCurrentUser();
         if(user != null){
             startActivity(new Intent(this, ProfileActivity.class));
@@ -71,13 +69,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickCatalog(View view) {
-              //создать ссылку на каталог!!!
         Intent intent = new Intent(getApplicationContext(), CatalogActivity.class);
         startActivity(intent);
     }
 
     public void onClickMap(View view) {
-            // Создать ссылку на карту которая будет сразу показывать аптеки!!!
         Intent intent = new Intent(getApplicationContext(), MapActivity.class);
         startActivity(intent);
     }
@@ -100,9 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.action_profile:
-//                Intent intentProf = new Intent(this, AuthorizationActivity.class);
-//                startActivity(intentProf);
-                showSignInWindow();
+                showSignInWindow(); // показать диалоговое окно авторизации
                 return true;
             case R.id.action_catalog:
                 Intent intentCata = new Intent(this, CatalogActivity.class);

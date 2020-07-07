@@ -44,7 +44,6 @@ public class AkusherstvoGynecologyInfectionActivity extends AppCompatActivity {
             cursor = db.query("MEDICINES", new String[]{"_id", "NAME"}, "CATEGORY = ?", new String[]{"infections"}, null, null, null);
             SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor, new String[]{"NAME"}, new int[]{android.R.id.text1}, 0);
             listView.setAdapter(listAdapter);
-
         } catch(SQLiteException e){
             e.getMessage();
             Toast toast = Toast.makeText(this,"Database unavailable", Toast.LENGTH_SHORT);

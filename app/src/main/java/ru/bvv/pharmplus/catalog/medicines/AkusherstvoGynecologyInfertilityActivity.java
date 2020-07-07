@@ -45,13 +45,6 @@ public class AkusherstvoGynecologyInfertilityActivity extends AppCompatActivity 
             cursor = db.query("MEDICINES", new String[]{"_id", "NAME"}, "CATEGORY = ?", new String[]{"infertility"}, null, null, null);
             SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor, new String[]{"NAME"}, new int[]{android.R.id.text1}, 0);
             listView.setAdapter(listAdapter);
-//
-//            if(cursor.moveToFirst()) {
-//                TextView textView = findViewById(R.id.tv_name_med_inf);
-//                String nameText = cursor.getString(1);
-//                textView.setText(nameText);
-//            }
-
         } catch(SQLiteException e){
             e.getMessage();
             Toast toast = Toast.makeText(this,"Database unavailable", Toast.LENGTH_SHORT);
