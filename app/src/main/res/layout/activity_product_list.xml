@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".catalog.ProductListActivity"
     android:orientation="vertical"
     android:background="@color/colorBackground"
     android:gravity="center|top"
-    tools:context=".catalog.medicines.AkusherstvoGynecologyInfectionActivity">
-
+    >
 
     <include
         layout="@layout/toolbar_main"
-        android:id="@+id/toolbar"/>
+        android:id="@+id/toolbar"
+        />
 
     <ImageView
         android:layout_width="75dp"
@@ -21,10 +23,13 @@
         android:layout_marginBottom="10dp"
         />
 
-    <ListView
-        android:id="@+id/list_item_gynecology_infection"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_item_products"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorBackground"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/list_item_product"
         />
+
 </LinearLayout>

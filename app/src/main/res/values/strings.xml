@@ -126,6 +126,9 @@
     <string name="text_release_form">Форма выпуска:</string>
     <string name="text_shelf_life">Срок годностти:</string>
     <string name="text_sign_out">Выйти</string>
+    <string name="line_start">Line Start</string>
+    <string name="line_end">Line End</string>
+    <string name="_62"><![CDATA[>]]></string>
 
     <string-array name="city">
         <item>Москва</item>
@@ -135,6 +138,7 @@
         <item>Томск</item>
         <item>Краснодар</item>
     </string-array>
+
     <string-array name="opisanie_orgalutran">
         <item>Состав</item>
         <item>фармакологическое действие</item>
@@ -144,6 +148,17 @@
         <item>Способ применения и дозы</item>
         <item>Форма выпуска</item>
         <item>Срок годности</item>
+    </string-array>
+
+    <string-array name="list_catalog">
+        <item>Лекарства</item>
+        <item>Витамины и БАД</item>
+        <item>Гигиена</item>
+        <item>Линзы</item>
+        <item>Медтовары</item>
+        <item>Медтехника</item>
+        <item>Интим</item>
+        <item>Красота</item>
     </string-array>
     <string-array name="list_catalog_medicines">
         <item>Акушерство, гинекология</item>
@@ -177,16 +192,6 @@
         <item>Трихомоноз и малярия</item>
         <item>Ухо, горло, нос</item>
         <item>Эндокринология</item>
-    </string-array>
-    <string-array name="list_catalog">
-        <item>Лекарства</item>
-        <item>Витамины и БАД</item>
-        <item>Гигиена</item>
-        <item>Интим</item>
-        <item>Красота</item>
-        <item>Линзы</item>
-        <item>Медтехника</item>
-        <item>Медтовары</item>
     </string-array>
     <string-array name="list_hygiene">
         <item>Антибактериальные средства гигиены</item>

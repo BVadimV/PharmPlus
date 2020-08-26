@@ -9,36 +9,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MapActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".catalog.medicines.AkusherstvoGynecologyInfectionActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".catalog.medicines.AkusherstvoGynecologyInfertilityActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ShoppingCartActivity"
+        <activity android:name=".catalog.ProductListActivity"></activity>
+        <activity android:name=".ContactsActivity" />
+        <activity
+            android:name=".catalog.CategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShoppingCartActivity"
             android:label="@string/shopping_cart"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".catalog.medicines.MedicinesActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".catalog.medicines.AkusherstvoGynecologyActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".catalog.MedGoodsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".catalog.LensesActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".catalog.HygieneActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".catalog.VitaminsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".catalog.CatalogMedicinesActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".CatalogActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"><!-- Установка ориентации экрана приложения портрет -->
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".catalog.medicines.MedicinesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".catalog.CategoryMedicines"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".catalog.CategoryVitamins"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".catalog.CategoryHygiene"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".catalog.CategoryMedGoods"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".catalog.CategoryLenses"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".catalog.medicines.CategoryGynecology"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"> <!-- Установка ориентации экрана приложения портрет -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

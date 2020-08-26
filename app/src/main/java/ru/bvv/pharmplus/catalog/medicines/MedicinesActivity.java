@@ -1,7 +1,5 @@
 package ru.bvv.pharmplus.catalog.medicines;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -13,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import androidx.appcompat.app.AppCompatActivity;
 
 import ru.bvv.pharmplus.PharmplusDBHelper;
 import ru.bvv.pharmplus.R;
@@ -33,7 +31,10 @@ public class MedicinesActivity extends AppCompatActivity {
         SQLiteOpenHelper pharmaplusDBHelper = new PharmplusDBHelper(this);
         try{
             SQLiteDatabase db = pharmaplusDBHelper.getReadableDatabase();
-            Cursor cursor = db.query("MEDICINES", new String[]{"NAME", "CHARACTERISTIC", "COMPOSITION", "PHARMACOLOGY_EFFECT", "INDICATION_FOR_USE", "CONTRAINDICATIONS", "SIDE_EFFECTS", "MODE_OF_APPLICATION", "RELEASE_FORM", "SHELF_LIFE", "COST", "IMAGE_RESOURCE_ID"}, "_id = ?", new String[]{String.valueOf(medicinesId)}, null, null, null);
+            Cursor cursor = db.query("MEDICINES", new String[]{"NAME", "CHARACTERISTIC", "COMPOSITION",
+                    "PHARMACOLOGY_EFFECT", "INDICATION_FOR_USE", "CONTRAINDICATIONS", "SIDE_EFFECTS",
+                    "MODE_OF_APPLICATION", "RELEASE_FORM", "SHELF_LIFE", "COST", "IMAGE_RESOURCE_ID"},
+                    "_id = ?", new String[]{String.valueOf(medicinesId)}, null, null, null);
 
             if(cursor.moveToFirst()){
                 String nameText = cursor.getString(0);

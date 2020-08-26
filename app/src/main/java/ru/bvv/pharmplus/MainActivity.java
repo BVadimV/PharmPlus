@@ -26,6 +26,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import ru.bvv.pharmplus.catalog.CategoryActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView profile, catalog, map, settings;
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Menu
         Toolbar toolBar = findViewById(R.id.toolbar);
         setSupportActionBar(toolBar);
 
@@ -69,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickCatalog(View view) {
-        Intent intent = new Intent(getApplicationContext(), CatalogActivity.class);
+        Intent intent = new Intent(this, CategoryActivity.class);
         startActivity(intent);
     }
 
@@ -80,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickContacts(View view) {
         //Ссылка на страницу контакты
+        Intent intent = new Intent(this, ContactsActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -91,25 +96,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.action_shopping_cart:
-                Intent intent = new Intent(this, ShoppingCartActivity.class);
-                startActivity(intent);
-                return true;
             case R.id.action_profile:
                 showSignInWindow(); // показать диалоговое окно авторизации
                 return true;
             case R.id.action_catalog:
-                Intent intentCata = new Intent(this, CatalogActivity.class);
+                Intent intentCata = new Intent(this, CategoryActivity.class);
                 startActivity(intentCata);
                 return true;
-//            case R.id.action_map:
-//                Intent intentMap = new Intent(this, )
-            case R.id.action_shopping:
-                Intent intentShop = new Intent(this, ShoppingCartActivity.class);
-                startActivity(intentShop);
+            case R.id.action_map:
+                Intent intentMap = new Intent(this, MapActivity.class);
+                startActivity(intentMap);
                 return true;
-//            case R.id.action_contacts:
-//                Intent
+            case R.id.action_shopping_cart:
+                Intent intent = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.action_contacts:
+                Intent intentContacts = new Intent(this, ContactsActivity.class);
+                startActivity(intentContacts);
+                return true;
             case R.id.sign_out:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(this, MainActivity.class));
