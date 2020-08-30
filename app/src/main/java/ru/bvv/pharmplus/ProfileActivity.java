@@ -20,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import ru.bvv.pharmplus.catalog.CategoryActivity;
+
 public class ProfileActivity extends AppCompatActivity {
 
     private final String TAG = "UserDetailActivity";
@@ -80,15 +82,6 @@ public class ProfileActivity extends AppCompatActivity {
         mUserListener = userListener;
     }
 
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//
-//        if(mUserListener != null){
-//            dbRef.removeEventListener(mUserListener);
-//        }
-//    }
-
     private void updateUI() {
 
         String userFirstname = user.getFirstname().toString();
@@ -112,21 +105,23 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.action_profile:
-//                Intent intentProf = new Intent(this, AuthorizationActivity.class);
-//                startActivity(intentProf);
+                Intent intentProf = new Intent(this, ProfileActivity.class);
+                startActivity(intentProf);
                 return true;
             case R.id.action_catalog:
-                Intent intentCata = new Intent(this, CatalogActivity.class);
+                Intent intentCata = new Intent(this, CategoryActivity.class);
                 startActivity(intentCata);
                 return true;
-//            case R.id.action_map:
-//                Intent intentMap = new Intent(this, )
+            case R.id.action_map:
+                Intent intentMap = new Intent(this, MapActivity.class);
+                startActivity(intentMap);
             case R.id.action_shopping:
                 Intent intentShop = new Intent(this, ShoppingCartActivity.class);
                 startActivity(intentShop);
                 return true;
-//            case R.id.action_contacts:
-//                Intent
+            case R.id.action_contacts:
+                Intent intentContacts = new Intent(this, ContactsActivity.class);
+                startActivity(intentContacts);
             case R.id.sign_out:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(this, MainActivity.class));

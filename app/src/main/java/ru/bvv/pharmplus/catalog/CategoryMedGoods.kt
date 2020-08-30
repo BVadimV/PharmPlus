@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import ru.bvv.pharmplus.*
-import ru.bvv.pharmplus.catalog.medicines.CategoryGynecology
 
 class CategoryMedGoods : AppCompatActivity(), RecyclerViewAdapter.OnItemClickListener {
 
@@ -64,7 +63,7 @@ class CategoryMedGoods : AppCompatActivity(), RecyclerViewAdapter.OnItemClickLis
                 return true
             }
             R.id.action_catalog -> {
-                val intent = Intent (this@CategoryMedGoods, CategoryMedGoods::class.java)
+                val intent = Intent (this@CategoryMedGoods, CategoryActivity::class.java)
                 startActivity(intent)
                 return true
             }

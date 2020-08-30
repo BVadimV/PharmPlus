@@ -12,6 +12,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import ru.bvv.pharmplus.catalog.CategoryActivity;
+
 public class ShoppingCartActivity extends AppCompatActivity {
 
     @Override
@@ -45,7 +47,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
                 startActivity(intentProf);
                 return true;
             case R.id.action_catalog:
-                Intent intentCata = new Intent(this, CatalogActivity.class);
+                Intent intentCata = new Intent(this, CategoryActivity.class);
                 startActivity(intentCata);
                 return true;
             case R.id.action_map:

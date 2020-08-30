@@ -1,34 +1,55 @@
-package ru.bvv.pharmplus.catalog.medicines
+package ru.bvv.pharmplus.catalog
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import ru.bvv.pharmplus.*
-import ru.bvv.pharmplus.catalog.RecyclerViewAdapter
-import ru.bvv.pharmplus.catalog.SimpleCategoryItem
+import ru.bvv.pharmplus.catalog.product.ProductList
 
 class CategoryGynecology : AppCompatActivity(), RecyclerViewAdapter.OnItemClickListener {
 
     override fun onItemClick(position: Int) {
-//        when (position) {
-//            0 -> {
-//                val Intent = Intent(this, CategoryGynecology::class.java)
-//            }
-//        }
+        when (position) {
+            0 -> {
+                val intent = Intent(this, ProductList::class.java)
+                intent.putExtra(ProductList.EXTRA_CATEGORY, "infertility")
+                startActivity(intent)
+            }
+            1 -> {
+                val intent = Intent(this, ProductList::class.java)
+                intent.putExtra(ProductList.EXTRA_CATEGORY, "infection")
+                startActivity(intent)
+            }
+            2 -> {
+                val intent = Intent(this, ProductList::class.java)
+                intent.putExtra(ProductList.EXTRA_CATEGORY, "gynecology")
+                startActivity(intent)
+            }
+            3 -> {
+                val intent = Intent(this, ProductList::class.java)
+                intent.putExtra(ProductList.EXTRA_CATEGORY, "gynecology")
+                startActivity(intent)
+            }
+            4 -> {
+                val intent = Intent(this, ProductList::class.java)
+                intent.putExtra(ProductList.EXTRA_CATEGORY, "gynecology")
+                startActivity(intent)
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
-// Не работает. крашится приложение.
-//        lateinit var toolbar: Toolbar
-//        setSupportActionBar(toolbar.findViewById(R.id.toolbar))
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
         val categoryList = generateNewValues()
         val adapter = RecyclerViewAdapter(categoryList, this)
@@ -65,7 +86,7 @@ class CategoryGynecology : AppCompatActivity(), RecyclerViewAdapter.OnItemClickL
                 return true
             }
             R.id.action_catalog -> {
-                val intent = Intent (this@CategoryGynecology, CategoryGynecology::class.java)
+                val intent = Intent (this@CategoryGynecology, CategoryActivity::class.java)
                 startActivity(intent)
                 return true
             }

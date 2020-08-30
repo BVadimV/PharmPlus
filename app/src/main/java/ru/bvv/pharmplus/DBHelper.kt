@@ -26,7 +26,7 @@ class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
     }
 
     private fun installDatabaseFromAssets(){
-        val inputStream = context.assets.open("$ASSETS_PATH/DATABASE_NAME.sqlite3")
+        val inputStream = context.assets.open("$ASSETS_PATH/$DATABASE_NAME.sqlite3")
 
         try {
             val outputFile = File(context.getDatabasePath(DATABASE_NAME).path)
@@ -52,7 +52,7 @@ class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
     }
 
     override fun getWritableDatabase(): SQLiteDatabase {
-        throw java.lang.RuntimeException("The $DATABASE_NAME database is not writable.")
+        throw RuntimeException("The $DATABASE_NAME database is not writable.")
     }
 
     override fun getReadableDatabase(): SQLiteDatabase {

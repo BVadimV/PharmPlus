@@ -10,18 +10,23 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import ru.bvv.pharmplus.*
+import ru.bvv.pharmplus.catalog.product.ProductList
 
 class CategoryHygiene : AppCompatActivity(), RecyclerViewAdapter.OnItemClickListener {
 
     override fun onItemClick(position: Int) {
-//        when (position) {
-//            0 -> {
-//                val Intent = Intent(this, CategoryMedicines::class.java)
-//            }
-//            1 -> {
-//                val intent = Intent(this, CategoryVitamines::class.java)
-//            }
-//        }
+        when (position) {
+            0 -> {
+                val intent = Intent(this, ProductList::class.java)
+                intent.putExtra(ProductList.EXTRA_CATEGORY, "antiseptic")
+                startActivity(intent)
+            }
+            1 -> {
+                val intent = Intent(this, ProductList::class.java)
+                intent.putExtra(ProductList.EXTRA_CATEGORY, "antiseptic")
+                startActivity(intent)
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +71,7 @@ class CategoryHygiene : AppCompatActivity(), RecyclerViewAdapter.OnItemClickList
                 return true
             }
             R.id.action_catalog -> {
-                val intent = Intent (this@CategoryHygiene, CategoryHygiene::class.java)
+                val intent = Intent (this@CategoryHygiene, CategoryActivity::class.java)
                 startActivity(intent)
                 return true
             }

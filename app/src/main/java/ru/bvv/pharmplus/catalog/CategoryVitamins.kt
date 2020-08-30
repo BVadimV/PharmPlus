@@ -66,7 +66,7 @@ class CategoryVitamins : AppCompatActivity(), RecyclerViewAdapter.OnItemClickLis
                 return true
             }
             R.id.action_catalog -> {
-                val intent = Intent (this@CategoryVitamins, CategoryVitamins::class.java)
+                val intent = Intent (this@CategoryVitamins, CategoryActivity::class.java)
                 startActivity(intent)
                 return true
             }

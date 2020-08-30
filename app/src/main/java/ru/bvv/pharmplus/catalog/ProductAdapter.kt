@@ -15,7 +15,6 @@ class ProductAdapter(private val exampleList: List<ProductItem>,
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
     View.OnClickListener{
-        val imageView: ImageView = itemView.findViewById(R.id.item_image)
         val textViewProductName: TextView = itemView.findViewById(R.id.item_product_name)
         val textViewPrice: TextView = itemView.findViewById(R.id.item_price)
 
@@ -45,7 +44,6 @@ class ProductAdapter(private val exampleList: List<ProductItem>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = exampleList[position]
 
-        holder.imageView.setImageResource(currentItem.image)
         holder.textViewProductName.text = currentItem.textName
         holder.textViewPrice.text = currentItem.textPrice
     }

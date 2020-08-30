@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".catalog.ProductListActivity"></activity>
-        <activity android:name=".ContactsActivity" />
+        <activity
+            android:name=".catalog.ProductListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ContactsActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".catalog.CategoryActivity"
             android:screenOrientation="portrait" />
@@ -23,7 +28,6 @@
         <activity
             android:name=".ShoppingCartActivity"
             android:label="@string/shopping_cart"
-            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".catalog.medicines.MedicinesActivity"
@@ -44,7 +48,10 @@
             android:name=".catalog.CategoryLenses"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".catalog.medicines.CategoryGynecology"
+            android:name=".catalog.CategoryGynecology"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".catalog.product.ProductList"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
