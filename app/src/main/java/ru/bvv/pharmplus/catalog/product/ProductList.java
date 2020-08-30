@@ -63,18 +63,15 @@ public class ProductList extends AppCompatActivity {
 
     // Создание списка объектов с Наименованиями и ценами товара
     private List<ProductItem> generateNewValues() {
-        Log.d("SQLite", "Generation start!!!!!!!");
         List<ProductItem> productList = new ArrayList<>();
         try {
             SQLiteDatabase db = pharmaplusDBHelper.getReadableDatabase();
             Cursor cursor = db.query("medicines", new String[]{"_ID", "NAME", "COST", "CATEGORY"},
                     "CATEGORY = ?", new String[]{currentCategory}, null, null, "NAME ASC");
-            Log.d("SQLite", " Size items: " + cursor.getCount());
             if (cursor.moveToFirst()) {// moveToFirst
                 do {
                     String titleText = cursor.getString(1);
                     String costInt = cursor.getInt(2) + " тенге";
-                    Log.d("SQLite", " Loop in progress. Name: " + cursor.getString(1));
 
                     productList.add(new ProductItem(titleText, costInt));
                 } while (cursor.moveToNext());
