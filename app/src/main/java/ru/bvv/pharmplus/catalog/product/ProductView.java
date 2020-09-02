@@ -1,5 +1,7 @@
 package ru.bvv.pharmplus.catalog.product;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -14,15 +16,19 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import ru.bvv.pharmplus.PharmplusDBHelper;
+import ru.bvv.pharmplus.DBHelper;
 import ru.bvv.pharmplus.R;
 
 public class ProductView extends AppCompatActivity {
 
-    Button buttonBuy;
+    private Button buttonBuy;
     public static final String EXTRA_MEDICINES_ID = "medicinesId";
     private int currentId;
+    private ImageView imageView;
+    private TextView cost, name,characteristics, composition, pharma,
+            indication, contraind, sideEffect, modeofapp, releaseForm, shelfLife;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,16 +37,16 @@ public class ProductView extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        Intent intent = getIntent();
-//        currentId = intent.getIntExtra(EXTRA_MEDICINES_ID);
+        Intent intent = getIntent();
+        currentId = intent.getIntExtra(EXTRA_MEDICINES_ID, 0);
 
-        SQLiteOpenHelper pharmaplusDBHelper = new PharmplusDBHelper(this);
+        SQLiteOpenHelper pharmaplusDBHelper = new DBHelper(this);
         try{
             SQLiteDatabase db = pharmaplusDBHelper.getReadableDatabase();
-            Cursor cursor = db.query("MEDICINES", new String[]{"NAME", "CHARACTERISTIC", "COMPOSITION",
-                            "PHARMACOLOGY_EFFECT", "INDICATION_FOR_USE", "CONTRAINDICATIONS", "SIDE_EFFECTS",
-                            "MODE_OF_APPLICATION", "RELEASE_FORM", "SHELF_LIFE", "COST", "IMAGE_RESOURCE_ID"},
-                    "_id = ?", new String[]{String.valueOf(currentId)}, null, null, null);
+            Cursor cursor = db.query("medicines", new String[]{"NAME", "CHARACTERISTIC", "COMPOSITION",
+                            "PHARMACOLOGY_EFFECT", "INDICATIONS_FOR_USE", "CONTRAINDICATIONS", "SIDE_EFFECTS",
+                            "MODE_OF_APPLICATION", "RELEASE_FORM", "SHELF_LIFE", "COST", "IMAGE"},
+                    "_ID = ?", new String[]{String.valueOf(currentId)}, null, null, null);
 
             if(cursor.moveToFirst()){
                 String nameText = cursor.getString(0);
@@ -54,43 +60,44 @@ public class ProductView extends AppCompatActivity {
                 String releaseFormText = cursor.getString(8);
                 String shelfLifeText = cursor.getString(9);
                 int costInt = cursor.getInt(10);
-                int photoId = cursor.getInt(11);
+                String photoText = cursor.getString(11);
 
-                ImageView imageView = (ImageView) findViewById(R.id.iv_medicines);
-                imageView.setImageResource(photoId);
+                imageView = (ImageView) findViewById(R.id.iv_medicines);
+                int resId = getResources().getIdentifier(photoText, "drawable", getPackageName());
+                imageView.setImageResource(resId);
                 imageView.setContentDescription(nameText);
 
-                TextView cost = (TextView) findViewById(R.id.tv_cost);
-                cost.setText(String.valueOf(costInt));
+                cost = (TextView) findViewById(R.id.tv_cost);
+                cost.setText(String.valueOf(costInt) + " тг.");
 
-                TextView name = (TextView) findViewById(R.id.tv_medicines_name);
+                name = (TextView) findViewById(R.id.tv_medicines_name);
                 name.setText(nameText);
 
-                TextView characteristics = (TextView) findViewById(R.id.tv_characteristics);
+                characteristics = (TextView) findViewById(R.id.tv_characteristics);
                 characteristics.setText(characteristicText);
 
-                TextView composition = (TextView) findViewById(R.id.tv_composition);
+                composition = (TextView) findViewById(R.id.tv_composition);
                 composition.setText(compositionText);
 
-                TextView pharma = findViewById(R.id.tv_tv_pharmacology);
+                pharma = findViewById(R.id.tv_tv_pharmacology);
                 pharma.setText(pharmaText);
 
-                TextView indication = findViewById(R.id.tv_indication);
+                indication = findViewById(R.id.tv_indication);
                 indication.setText(indicationsText);
 
-                TextView contraind = findViewById(R.id.tv_contraindication);
+                contraind = findViewById(R.id.tv_contraindication);
                 contraind.setText(contraindicationsText);
 
-                TextView sideEffect = findViewById(R.id.tv_side_effect);
+                sideEffect = findViewById(R.id.tv_side_effect);
                 sideEffect.setText(sideEffectsText);
 
-                TextView modeofapp = findViewById(R.id.tv_mode_of_app);
+                modeofapp = findViewById(R.id.tv_mode_of_app);
                 modeofapp.setText(modeOfApplicText);
 
-                TextView releaseForm = findViewById(R.id.tv_release_form);
+                releaseForm = findViewById(R.id.tv_release_form);
                 releaseForm.setText(releaseFormText);
 
-                TextView shelfLife = findViewById(R.id.tv_shelf_life);
+                shelfLife = findViewById(R.id.tv_shelf_life);
                 shelfLife.setText(shelfLifeText);
             }
             cursor.close();

@@ -1,12 +1,10 @@
 package ru.bvv.pharmplus.catalog
 
-import android.database.Cursor
-import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteOpenHelper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ru.bvv.pharmplus.DBHelper
 import ru.bvv.pharmplus.R
+import ru.bvv.pharmplus.catalog.product.ProductItem
 
 class ProductListActivity : AppCompatActivity() {
 

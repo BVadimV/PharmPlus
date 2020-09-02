@@ -30,9 +30,6 @@
             android:label="@string/shopping_cart"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".catalog.medicines.MedicinesActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".catalog.CategoryMedicines"
             android:screenOrientation="portrait" />
         <activity
@@ -52,6 +49,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".catalog.product.ProductList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".catalog.product.ProductView"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"

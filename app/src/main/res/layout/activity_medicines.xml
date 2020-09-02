@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".catalog.medicines.MedicinesActivity"
+    tools:context=".catalog.product.ProductView"
     android:orientation="vertical"
     android:background="@color/colorBackground">
 <ScrollView
@@ -23,7 +23,7 @@
             android:id="@+id/iv_medicines"
             android:layout_width="180dp"
             android:layout_height="180dp"
-            android:src="@drawable/med_orgalutran" />
+            tools:src="@drawable/med_orgalutran" />
         <TextView
             android:id="@+id/tv_medicines_name"
             android:layout_width="wrap_content"

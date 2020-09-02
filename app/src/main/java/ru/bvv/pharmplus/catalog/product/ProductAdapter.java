@@ -1,6 +1,7 @@
 package ru.bvv.pharmplus.catalog.product;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,36 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import ru.bvv.pharmplus.R;
-import ru.bvv.pharmplus.catalog.ProductItem;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
     private List<ProductItem> productItems;
+    private OnItemClickListener listener;
+    private static int id;
 
-
-    class ProductViewHolder extends RecyclerView.ViewHolder {
-
-        TextView titleName;
-        TextView price;
-
-        public ProductViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            titleName = itemView.findViewById(R.id.item_product_name);
-            price = itemView.findViewById(R.id.item_price);
-
-//            itemView.setOnClickListener(this);
-        }
-
-//        void bind(int position){
-//            ProductItem currentItem = productItems.get(position);
-//            titleName.setText(currentItem.getTextName());
-//            price.setText(currentItem.getTextPrice());
-//        }
-    }
-
-    public ProductAdapter(List<ProductItem> productItems){
+    public ProductAdapter(List<ProductItem> productItems, OnItemClickListener listener){
         this.productItems = productItems;
+        this.listener = listener;
     }
 
     @NonNull
@@ -52,15 +33,47 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+    public void onBindViewHolder(final ProductViewHolder holder,final int position) {
         ProductItem currentItem = productItems.get(position);
 
         holder.titleName.setText(currentItem.getTextName());
         holder.price.setText(currentItem.getTextPrice());
     }
 
+    public static int getId(){
+        return id;
+    }
+
     @Override
-    public int getItemCount() {
-        return productItems.size();
+    public int getItemCount() {return productItems.size();}
+
+    public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        TextView titleName;
+        TextView price;
+
+        public ProductViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            titleName = itemView.findViewById(R.id.item_product_name);
+            price = itemView.findViewById(R.id.item_price);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            ProductItem currentItem = productItems.get(position);
+            id = currentItem.getId();
+            if (position != RecyclerView.NO_POSITION){
+                listener.onItemClick(position);
+            }
+        }
+    }
+
+    // интерфейс Обработка нажатия
+    public interface OnItemClickListener{
+        void onItemClick(int position);
     }
 }

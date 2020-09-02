@@ -30,13 +30,15 @@ import ru.bvv.pharmplus.ProfileActivity;
 import ru.bvv.pharmplus.R;
 import ru.bvv.pharmplus.ShoppingCartActivity;
 import ru.bvv.pharmplus.catalog.CategoryActivity;
-import ru.bvv.pharmplus.catalog.ProductItem;
 
-public class ProductList extends AppCompatActivity {
+public class ProductList extends AppCompatActivity implements ProductAdapter.OnItemClickListener{
 
     public static final String EXTRA_CATEGORY = "category";
     private SQLiteOpenHelper pharmaplusDBHelper;
     private String currentCategory;
+    private Cursor cursor;
+    private ProductAdapter adapter;
+    private ProductAdapter.OnItemClickListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +51,10 @@ public class ProductList extends AppCompatActivity {
         Intent intent = getIntent();
         currentCategory = intent.getStringExtra(EXTRA_CATEGORY);
 
-//        pharmaplusDBHelper = new PharmplusDBHelper(this);
         pharmaplusDBHelper = new DBHelper(this);
-// Create list for Recycler View.
+        // Create list for Recycler View.
         List<ProductItem> productList = generateNewValues();
-        ProductAdapter adapter = new ProductAdapter(productList);
+        adapter = new ProductAdapter(productList, this);
 
         RecyclerView listItem = findViewById(R.id.list_item_products);
         listItem.setLayoutManager(new LinearLayoutManager(this));
@@ -66,14 +67,15 @@ public class ProductList extends AppCompatActivity {
         List<ProductItem> productList = new ArrayList<>();
         try {
             SQLiteDatabase db = pharmaplusDBHelper.getReadableDatabase();
-            Cursor cursor = db.query("medicines", new String[]{"_ID", "NAME", "COST", "CATEGORY"},
+            cursor = db.query("medicines", new String[]{"_ID", "NAME", "COST", "CATEGORY"},
                     "CATEGORY = ?", new String[]{currentCategory}, null, null, "NAME ASC");
             if (cursor.moveToFirst()) {// moveToFirst
                 do {
+                    int id = cursor.getInt(0);
                     String titleText = cursor.getString(1);
                     String costInt = cursor.getInt(2) + " тенге";
 
-                    productList.add(new ProductItem(titleText, costInt));
+                    productList.add(new ProductItem( id,titleText, costInt));
                 } while (cursor.moveToNext());
             }
             cursor.close();
@@ -83,8 +85,6 @@ public class ProductList extends AppCompatActivity {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
         }
-        Log.d("SQLite", "title: " + productList.toString());
-
         return productList;
     }
 
@@ -129,5 +129,14 @@ public class ProductList extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(this, ProductView.class);
+        int id = ProductAdapter.getId();
+        Log.d("Product ID", "ID = " + id);
+        intent.putExtra(ProductView.EXTRA_MEDICINES_ID, id);
+        startActivity(intent);
     }
 }
